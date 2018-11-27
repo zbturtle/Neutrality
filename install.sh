@@ -1,6 +1,6 @@
 #! /bin/bash
 clear
-printf '\033]2;                    NEUTRALITY-INSTALLER:'
+printf '\e[1;32m                    NEUTRALITY-INSTALLER:\e[0m'
 echo
 echo -e "Press \e[1;31many key\e[0m to initiate the script installation..."
 read -n 1
