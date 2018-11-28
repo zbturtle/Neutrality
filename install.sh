@@ -16,6 +16,27 @@ printf '\e[1;32m
 echo
 echo -e "\e[1;29m-----------------------------------------------------------------------------\e[0m"
 echo
+echo -e "\e[1;29m     Terms Of Usage\e[0m"
+echo
+echo -e "\e[3;29m I shall not use neutrality to:
+(i) upload or otherwise transmit, display or distribute any
+content that infringes any trademark, trade secret, copyright
+or other proprietary or intellectual property rights of any
+person; (ii) upload or otherwise transmit any material that contains
+software viruses or any other computer code, files or programs
+designed to interrupt, destroy or limit the functionality of any
+computer software or hardware or telecommunications equipment;\e[0m"
+echo
+echo -e "\e[1;29m Do you agree to these terms?\e[0m"
+echo
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) echo -e "\e[1;32mThe Terms Of Usage have been agreed to; continuing along with the installation.\e[0m" break;;
+        No ) echo -e "\e[1;31mExiting the installation process as the Terms Of Usage have not been agreed to.\e[0m" exit;;
+    esac
+done
+echo
+echo
 printf '\e[1;32m                    NEUTRALITY-INSTALLER:\e[0m'
 echo
 echo -e "Press \e[1;31many key\e[0m to initiate the script installation..."
