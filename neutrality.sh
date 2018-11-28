@@ -3,7 +3,7 @@
 # set -x
 VERSION=2.1.5
 #Number of tools with keyboard shortcut support
-HOWMANYTOOLS=53
+HOWMANYTOOLS=54
 BACKL="0"
 DONATIONS=10
 LATESTCHANGELOGLINES=26
@@ -87,7 +87,7 @@ toolarray=(
 "websploit" "openvas" "shellter" "geany" "bleachbit" "vmr" "hashbuster" "findsploit" "howdoi" "operative" "netattack2" "koadic" "empire" "meterpreter_paranoid_mode"
 "dropit_frmw" "wifi_pumpkin" "veil" "leviathan" "fake_image" "avet" "gloom" "arcanus" "msfpc" "morphhta" "lfi" "unibyav" "demiguise" "dkmc" "sechub" "beef" "mitmf"
 "fsociety" "arp_scan" "netool" "sqlmap" "patator" "zeus" "evil_droid" "nosqlmap" "eggshell" "zerodoor" "cromos" "yuki-chan" "socialfish" "autosploit" "blazy"
-"striker" "hyprpulse" "instaburst" "instagram-py" "datasploit" "sitebroker" "enigma"
+"striker" "hyprpulse" "instaburst" "instagram-py" "datasploit" "sitebroker" "enigma" "ha3mrx"
 )
 #setting frequent stings
 	YNYES="("$YS"y"$CE"/"$YS"n"$CE")("$YS"Enter"$CE"=yes)"
@@ -853,6 +853,11 @@ function listshortcuts
 		TITLE="Yuki-Chan-The-Auto-Pentest"
 		NAMECD="cd /root/Yuki-Chan-The-Auto-Pentest"
 		KSSET="./yuki.sh"
+  elif [[ "$nn" = "54" ]]
+	then
+		TITLE="Ha3MrX"
+		NAMECD="cd /root/Ha3MrX"
+		KSSET="python Ha3MrX.py"
 	fi
 }
 function reinstall_tools
@@ -3315,6 +3320,11 @@ function wifi_tools
 		echo -e ""$YS"30"$CE") SocialFish            Ultimate phishing tool with Ngrok integrated"
 	else
 		echo -e ""$RS"30"$CE") "$RS"SocialFish"$CE"            Ultimate phishing tool with Ngrok integrated"
+  if [[ -d /root/Ha3MrX ]]
+	then
+		echo -e ""$YS"31"$CE") Ha3MrX            A full blown hacking toolkit"
+	else
+		echo -e ""$RS"31"$CE") "$RS"Ha3MrX"$CE"            A full blown hacking toolkit"
 	fi
 	echo -e ""$YS" b"$CE") Go back"
 	echo -e ""$YS"00"$CE") Main menu"
@@ -3866,6 +3876,23 @@ function wifi_tools
 			if [[ "$INSTALL" = "install" ]]
 			then
 				install_socialfish
+			else
+				continue
+			fi
+		fi
+		cd
+  elif [[ "$APPP" = "31" ]]
+	then
+		if [[ -d "/root/Ha3MrX" ]]
+		then
+			cd /root/Ha3MrX
+			python Ha3MrX.py
+		else
+			echo -e "$TNI"
+			read INSTALL
+			if [[ "$INSTALL" = "install" ]]
+			then
+				install_ha3mrx
 			else
 				continue
 			fi
@@ -9781,7 +9808,7 @@ check_if_ks
 	}
 	function install_ha3mrx
 	{
-		foldname="ha3mrx"
+		foldname="Ha3MrX"
 		gitlink="https://github.com/Ha3MrX/Hacking"
 		install_default
 		cloned=$?
@@ -9790,7 +9817,6 @@ check_if_ks
 			chmod +x install.sh
 			sudo bash install.sh
       chmod +x Ha3MrX.py
-      sudo python.py
 		fi
 	}
 	function install_wifite
