@@ -3386,7 +3386,7 @@ function wifi_tools
 				./ZT.sh
 				cd
 			else
-				echo -e "You have to install it manually since its not on.Sorry."
+				echo -e "You have to install it manually since its not on github.Sorry."
 				sleep 4
 				exec bash "$0"
 			fi
@@ -6275,7 +6275,7 @@ function update_neutrality
 	then
 		VER=$(timeout -s SIGTERM 20 curl 
     #Update Github
-    "https://raw.githubusercontent.com/zbturtle/Neutrality/master/versions.txt" 2>/dev/null)
+    "https://raw.githubusercontent.com/arismelachroinos/lscript/master/version.txt" 2>/dev/null)
 		if [[ "$VERSION" != "$VER" ]]
 		then
 			clear
@@ -6306,7 +6306,7 @@ function update_neutrality
 				cd
 				git clone 
         #Update Github
-        https://github.com/zbturtle/Neutrality.git
+        https://github.com/arismelachroinos/lscript.git
 				cd "$LPATH"
 				chmod +x install.sh
 				clear
@@ -6522,7 +6522,7 @@ function tools_menu
 			echo -e ""$BS"Submit it as an issue on my github repo:"$CE""
 			echo -e "	
       #Update Github
-      "$YS"https://github.com/zbturtle/Neutrality"$CE""
+      "$YS"https://github.com/arismelachroinos/lscript"$CE""
 			echo -e ""
 			echo -e ""
 			echo -e "$PAKTGB"
@@ -9778,6 +9778,20 @@ check_if_ks
 		#~ cd /root/fluxion/install
 		#~ chmod +x install.sh
 		#~ ./install.sh	
+	}
+	function install_ha3mrx
+	{
+		foldname="ha3mrx"
+		gitlink="https://github.com/Ha3MrX/Hacking"
+		install_default
+		cloned=$?
+		if [[ "$cloned" == 1 ]]
+		then
+			chmod +x install.sh
+			sudo bash install.sh
+      chmod +x Ha3MrX.py
+      sudo python.py
+		fi
 	}
 	function install_wifite
 	{
