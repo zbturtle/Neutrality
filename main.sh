@@ -1,7 +1,45 @@
 #! /bin/bash
 clear
-printf '\033]2;                    NEUTRALITY-INSTALLER:'
+clear
+printf '\e[1;32m
+888b    888                   888                     888 d8b 888    
+8888b   888                   888                     888 Y8P 888            
+88888b  888                   888                     888     888            
+888Y88b 888  .d88b.  888  888 888888 888d888  8888b.  888 888 888888 888  888
+888 Y88b888 d8P  Y8b 888  888 888    888P"       "88b 888 888 888    888  888
+888  Y88888 88888888 888  888 888    888     .d888888 888 888 888    888  888
+888   Y8888 Y8b.     Y88b 888 Y88b.  888     888  888 888 888 Y88b.  Y88b 888
+888    Y888  "Y8888   "Y88888  "Y888 888     "Y888888 888 888  "Y888  "Y88888
+                                                                          888
+                                                                     Y8b d88P
+                                                                      "Y88P" \e[0m'
 echo
+echo -e "\e[1;29m------------------------------------------------------------------------------\e[0m"
+echo
+echo -e "\e[1;29m     Terms Of Usage\e[0m"
+echo
+echo -e "\e[3;29m I shall not use neutrality to:
+(i) upload or otherwise transmit, display or distribute any
+content that infringes any trademark, trade secret, copyright
+or other proprietary or intellectual property rights of any
+person; (ii) upload or otherwise transmit any material that contains
+software viruses or any other computer code, files or programs
+designed to interrupt, destroy or limit the functionality of any
+computer software or hardware or telecommunications equipment;\e[0m"
+echo
+echo -e "\e[1;29m Do you agree to these terms?\e[0m"
+echo
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) echo -e "\e[1;32mThe Terms Of Usage have been agreed to; continuing along with the installation.\e[0m" 
+         break;;
+        No ) echo -e "\e[1;31mExiting the installation process as the Terms Of Usage have not been agreed to.\e[0m"
+        exit;;
+    esac
+done
+echo -e ""
+printf '\e[1;32m                    NEUTRALITY-INSTALLER:\e[0m'
+echo -e ""
 echo -e "Press \e[1;31many key\e[0m to initiate the script installation..."
 read -n 1
 clear
