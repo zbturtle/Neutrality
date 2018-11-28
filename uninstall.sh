@@ -1,12 +1,12 @@
 #! /bin/bash
 function nounistall
 {
-	echo -e "I knew you are still lazy :D :D "
+	echo -e "Glad you've decied not to uninstall me. "
 	sleep 2
-	echo -e "If you want any feature to be added, contact me on FB"
+	echo -e "If you have any suggestions be sure to leave them on the github."
 	sleep 2
 	echo -e " "
-	echo -e "Aris"
+	echo -e "~Someone"
 	sleep 1
 	exit
 }
