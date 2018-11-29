@@ -3975,7 +3975,7 @@ function wifi_tools
 		echo -e "$PAKTGB"
 		$READAK
 	fi
-}
+
 function toolkits
 {
 while true
