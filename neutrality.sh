@@ -3,7 +3,7 @@
 # set -x
 VERSION=2.1.5
 #Number of tools with keyboard shortcut support
-HOWMANYTOOLS=54
+HOWMANYTOOLS=53
 BACKL="0"
 DONATIONS=10
 LATESTCHANGELOGLINES=26
@@ -3325,7 +3325,7 @@ function wifi_tools
 		echo -e ""$YS"30"$CE") SocialFish            Ultimate phishing tool with Ngrok integrated"
 	else
 		echo -e ""$RS"30"$CE") "$RS"SocialFish"$CE"            Ultimate phishing tool with Ngrok integrated"
-  if [[ -d /root/Ha3MrX ]]
+ 	 if [[ -d /root/Ha3MrX ]]
 	then
 		echo -e ""$YS"31"$CE") Ha3MrX            A hacking toolkit containing numerous tools, many for penetration testing"
 	else
@@ -3976,6 +3976,55 @@ function wifi_tools
 		$READAK
 	fi
 	done
+}
+function toolkits
+{
+while true
+do
+	clear
+	TERMINALTITLE="TOOLKITS"
+	dash_calc
+  printf '\033]2;TOOLKITS\a'
+  if [[ -d /root/Ha3MrX ]]
+	then
+		echo -e ""$YS"1"$CE") Ha3MrX            A hacking toolkit containing numerous tools, many for penetration testing"
+	else
+		echo -e ""$RS"1"$CE") "$RS"Ha3MrX"$CE"            A hacking toolkit containing numerous tools, many for penetration testing"
+	fi
+	echo -e ""$YS" b"$CE") Go back"
+	echo -e ""$YS" 0"$CE") EXIT"
+	echo -e "Choose: "
+	read -e TOOLKIT
+	if [[ "$TOOLKIT" = 1 ]]
+	then
+		if [[ -f /root/Ha3MrX ]]
+		then
+     cd /root/Ha3MrX
+			python Ha3MrX.py
+      cd
+		else
+			echo -e "$TNI"
+				read INSTALL
+				if [[ "$INSTALL" = "install" ]]
+				then
+					install_ha3mrx
+				else
+					continue
+				fi
+		fi
+	elif [[ "$TOOLKIT" = 00 ]]
+	then
+		clear
+		exec bash $0
+	elif [[ "$TOOLKIT" = "back" || "$TOOLKIT" = "b" ]]
+	then
+		break
+	elif [[ "$TOOLKIT" = 0 ]]
+	then
+		clear
+		exit
+	fi
+done
 }
 function remote_access
 {
@@ -5864,55 +5913,6 @@ function website_tools
 		#~ echo -e "$PAKTGB"
 		#~ $READAK
 	done
-}
-function toolkits
-{
-while true
-do
-	printf '\033]2;TOOLKITS\a'
-	clear
-	TERMINALTITLE="TOOLKITS"
-	dash_calc
-  if [[ -d /root/Ha3MrX ]]
-	then
-		echo -e ""$YS"1"$CE") Ha3MrX            A hacking toolkit containing numerous tools, many for penetration testing"
-	else
-		echo -e ""$RS"1"$CE") "$RS"Ha3MrX"$CE"            A hacking toolkit containing numerous tools, many for penetration testing"
-	fi
-	echo -e ""$YS" b"$CE") Go back"
-	echo -e ""$YS" 0"$CE") EXIT"
-	echo -e "Choose: "
-	read -e OTHERT
-	clear
-	if [[ "$OTHERT" = 1 ]]
-	then
-		if [[ -f /root/Ha3MrX ]]
-		then
-			python Ha3MrX.py
-		else
-			echo -e "$TNI"
-				read INSTALL
-				if [[ "$INSTALL" = "install" ]]
-				then
-					install_ha3mrx
-				else
-					continue
-				fi
-
-		fi
-	elif [[ "$OTHERT" = 00 ]]
-	then
-		clear
-		exec bash $0
-	elif [[ "$OTHERT" = "back" || "$OTHERT" = "b" ]]
-	then
-		break
-	elif [[ "$OTHERT" = 0 ]]
-	then
-		clear
-		exit
-	fi
-done
 }
 function other_tools
 {
