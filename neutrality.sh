@@ -281,11 +281,11 @@ function banner
 	echo -e "$COL 8888b   888                   888                     888 Y8P 888            $CE"
 	echo -e "$COL 88888b  888                   888                     888     888             $CE   by "$COL"AN UNNAMED INDIVIDUAL $CE"
 	echo -e "$COL 888Y88b 888  .d88b.  888  888 888888 888d888  8888b.  888 888 888888 888  888 $CE"
-  	echo -e "$COL 888 Y88b888 d8P  Y8b 888  888 888    888P"       "88b 888 888 888    888  888 $CE"
-  	echo -e "$COL 888  Y88888 88888888 888  888 888    888     .d888888 888 888 888    888  888 $CE"
-	echo -e "$COL 888   Y8888 Y8b.     Y88b 888 Y88b.  888     888  888 888 888 Y88b.  Y88b 888 $CE"
- 	echo -e "$COL 888    Y888  "Y8888   "Y88888  "Y888 888     "Y888888 888 888  "Y888  "Y88888 $CE"
-  	echo -e "$COL                                                                           888 $CE"
+  echo -e "$COL 888 Y88b888 d8P  Y8b 888  888 888    888P"       "88b 888 888 888    888  888 $CE"
+  echo -e "$COL 888  Y88888 88888888 888  888 888    888     .d888888 888 888 888    888  888 $CE"
+  echo -e "$COL 888   Y8888 Y8b.     Y88b 888 Y88b.  888     888  888 888 888 Y88b.  Y88b 888 $CE"
+  echo -e "$COL 888    Y888  "Y8888   "Y88888  "Y888 888     "Y888888 888 888  "Y888  "Y88888 $CE"
+  echo -e "$COL                                                                           888 $CE"
 	echo -e "$COL                                                                      Y8b d88P$CE"
 	echo -e "$COL The                                                                   "Y88P" script$CE"
 	echo -e ""$YS"if"$CE") Ifconfig           "$YS"l"$CE") Local IPs & gateways "$RS"|"$CE"  "$YS"scan"$CE") Arp-scan network"
@@ -3327,9 +3327,9 @@ function wifi_tools
 		echo -e ""$RS"30"$CE") "$RS"SocialFish"$CE"            Ultimate phishing tool with Ngrok integrated"
   if [[ -d /root/Ha3MrX ]]
 	then
-		echo -e ""$YS"31"$CE") Ha3MrX            A full blown hacking toolkit"
+		echo -e ""$YS"31"$CE") Ha3MrX            A hacking toolkit containing numerous tools, many for penetration testing"
 	else
-		echo -e ""$RS"31"$CE") "$RS"Ha3MrX"$CE"            A full blown hacking toolkit"
+		echo -e ""$RS"31"$CE") "$RS"Ha3MrX"$CE"            A hacking toolkit containing numerous tools, many for penetration testing"
 	fi
 	echo -e ""$YS" b"$CE") Go back"
 	echo -e ""$YS"00"$CE") Main menu"
@@ -5882,6 +5882,55 @@ function website_tools
 		#~ $READAK
 	done
 }
+function toolkits
+{
+while true
+do
+	printf '\033]2;TOOLKITS\a'
+	clear
+	TERMINALTITLE="TOOLKITS"
+	dash_calc
+  if [[ -d /root/Ha3MrX ]]
+	then
+		echo -e ""$YS"1"$CE") Ha3MrX            A hacking toolkit containing numerous tools, many for penetration testing"
+	else
+		echo -e ""$RS"1"$CE") "$RS"Ha3MrX"$CE"            A hacking toolkit containing numerous tools, many for penetration testing"
+	fi
+	echo -e ""$YS" b"$CE") Go back"
+	echo -e ""$YS" 0"$CE") EXIT"
+	echo -e "Choose: "
+	read -e OTHERT
+	clear
+	if [[ "$OTHERT" = 1 ]]
+	then
+		if [[ -f /root/Ha3MrX ]]
+		then
+			python Ha3MrX.py
+		else
+			echo -e "$TNI"
+				read INSTALL
+				if [[ "$INSTALL" = "install" ]]
+				then
+					install_ha3mrx
+				else
+					continue
+				fi
+
+		fi
+	elif [[ "$OTHERT" = 00 ]]
+	then
+		clear
+		exec bash $0
+	elif [[ "$OTHERT" = "back" || "$OTHERT" = "b" ]]
+	then
+		break
+	elif [[ "$OTHERT" = 0 ]]
+	then
+		clear
+		exit
+	fi
+done
+}
 function other_tools
 {
 while true
@@ -5951,110 +6000,6 @@ do
 				else
 					continue
 				fi
-
-		fi
-	elif [[ "$OTHERT" = 2 ]]
-	then
-		if [[ -d /root/dagon ]]
-		then
-			dagon_script
-		else
-			echo -e "$TNI"
-				read INSTALL
-				if [[ "$INSTALL" = "install" ]]
-				then
-					install_dagon
-				else
-					continue
-				fi
-
-		fi
-	elif [[ "$OTHERT" = 3 ]]
-	then
-		if [[ -d /root/LALIN ]]
-		then
-			cd /root/LALIN
-			./Lalin.sh
-			cd
-		else
-			echo -e "$TNI"
-			read INSTALL
-			if [[ "$INSTALL" = "install" ]]
-			then
-				install_lalin
-			else
-				continue
-			fi
-		fi
-	elif [[ "$OTHERT" = "4" ]]
-	then
-		if [[ -d "/root/cupp" ]]
-		then
-			cd /root/cupp
-			python cupp.py -i
-			cd		
-			echo -e "$PAKTGB"
-			$READAK	
-		else
-			echo -e "$TNI"
-			read INSTALL
-			if [[ "$INSTALL" = "install" ]]
-			then
-				install_cupp
-			else
-				continue
-			fi
-		fi
-	elif [[ "$OTHERT" = "5" ]]
-	then
-		if [[ -f "/usr/bin/bleachbit" ]]
-		then
-			bleachbit		
-		else
-			echo -e "$TNI"
-			read INSTALL
-			if [[ "$INSTALL" = "install" ]]
-			then
-				install_bleachbit
-			else
-				continue
-			fi
-		fi
-	elif [[ "$OTHERT" = "6" ]]
-	then
-		if [[ -d "/root/Hash-Buster" ]]
-		then
-			cd /root/Hash-Buster
-			python hash.py	
-			echo -e "$PAKTGB"
-			$READAK	
-		else
-			echo -e "$TNI"
-			read INSTALL
-			if [[ "$INSTALL" = "install" ]]
-			then
-				install_hashbuster
-			else
-				continue
-			fi
-		fi
-	elif [[ "$OTHERT" = "7" ]]
-	then
-		if [[ -d "/root/patator" ]]
-		then
-			patator_automation
-			echo -e "$PAKTGB"
-			$READAK	
-		else
-			echo -e "$TNI"
-			read INSTALL
-			if [[ "$INSTALL" = "install" ]]
-			then
-				install_patator
-			else
-				continue
-			fi
-		fi
 	elif [[ "$OTHERT" = 00 ]]
 	then
 		clear
@@ -6497,6 +6442,7 @@ function tools_menu
 	echo -e ""$YS" 4"$CE") Webside tools"
 	echo -e ""$YS" 5"$CE") Others"
 	echo -e ""$YS" 6"$CE") Install/reinstall a tool"
+  echo -e ""$YS" 7"$CE") Toolkits"
 	echo -e ""$YS" i"$CE") Info"
 	echo -e ""$YS" b"$CE") Go back"
 	#~ echo -e ""$YS"00"$CE") Main menu"
@@ -6524,6 +6470,9 @@ function tools_menu
 			NOCONFIRM=0
 			reinstall_tools
 			NOCONFIRM=0
+    elif [[ "$CATEG" = "7" ]]
+		then
+			toolkits
 		elif [[ "$CATEG" = "0" ]]
 		then
 			clear
