@@ -3975,7 +3975,6 @@ function wifi_tools
 		echo -e "$PAKTGB"
 		$READAK
 	fi
-	done
 }
 function toolkits
 {
@@ -4024,6 +4023,7 @@ do
 		clear
 		exit
 	fi
+  done
 }
 function remote_access
 {
