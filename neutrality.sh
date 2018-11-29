@@ -3886,23 +3886,6 @@ function wifi_tools
 			fi
 		fi
 		cd
-  elif [[ "$APPP" = "31" ]]
-	then
-		if [[ -d "/root/Ha3MrX" ]]
-		then
-			cd /root/Ha3MrX
-			python Ha3MrX.py
-		else
-			echo -e "$TNI"
-			read INSTALL
-			if [[ "$INSTALL" = "install" ]]
-			then
-				install_ha3mrx
-			else
-				continue
-			fi
-		fi
-		cd
 	elif [[ "$APPP" = "7" ]]
 	then
 		if [[ -d "/root/hakkuframework" ]]
