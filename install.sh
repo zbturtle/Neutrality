@@ -31,8 +31,10 @@ echo -e "\e[1;29m Do you agree to these terms?\e[0m"
 echo
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) echo -e "\e[1;32mThe Terms Of Usage have been agreed to; continuing along with the installation.\e[0m" break;;
-        No ) echo -e "\e[1;31mExiting the installation process as the Terms Of Usage have not been agreed to.\e[0m" exit;;
+        Yes ) echo -e "\e[1;32mThe Terms Of Usage have been agreed to; continuing along with the installation.\e[0m"
+	break;;
+        No ) echo -e "\e[1;31mExiting the installation process as the Terms Of Usage have not been agreed to.\e[0m"
+	exit;;
     esac
 done
 echo
