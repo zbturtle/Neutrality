@@ -4024,7 +4024,6 @@ do
 		clear
 		exit
 	fi
-done
 }
 function remote_access
 {
