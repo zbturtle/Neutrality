@@ -5978,6 +5978,7 @@ do
 				else
 					continue
 				fi
+      fi
 	elif [[ "$OTHERT" = 00 ]]
 	then
 		clear
