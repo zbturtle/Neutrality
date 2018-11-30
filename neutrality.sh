@@ -287,7 +287,7 @@ function banner
   echo -e "$COL 888    Y888  "Y8888   "Y88888  "Y888 888     "Y888888 888 888  "Y888  "Y88888 $CE"
   echo -e "$COL                                                                           888 $CE"
 	echo -e "$COL                                                                      Y8b d88P$CE"
-	echo -e "$COL The                                                                   "Y88P" script$CE"
+	echo -e "$COL The                                                                   "Y88P"             script$CE"
 	echo -e ""$YS"if"$CE") Ifconfig           "$YS"l"$CE") Local IPs & gateways "$RS"|"$CE"  "$YS"scan"$CE") Arp-scan network"
 	if [[ "$WLANCHECKING" = "" ]]
 	then
