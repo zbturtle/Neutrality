@@ -3977,55 +3977,6 @@ function wifi_tools
 	fi
   done
 }
-function toolkits
-{
-while true
-do
-	clear
-	TERMINALTITLE="TOOLKITS"
-	dash_calc
-  printf '\033]2;TOOLKITS\a'
-  if [[ -d /root/Ha3MrX ]]
-	then
-		echo -e ""$YS"1"$CE") Ha3MrX            A hacking toolkit containing numerous tools, many for penetration testing"
-	else
-		echo -e ""$RS"1"$CE") "$RS"Ha3MrX"$CE"            A hacking toolkit containing numerous tools, many for penetration testing"
-	fi
-	echo -e ""$YS" b"$CE") Go back"
-	echo -e ""$YS" 0"$CE") EXIT"
-	echo -e "Choose: "
-	read -e TOOLKIT
-	if [[ "$TOOLKIT" = 1 ]]
-	then
-		if [[ -f /root/Ha3MrX ]]
-		then
-     cd /root/Ha3MrX
-			python Ha3MrX.py
-      cd
-		else
-			echo -e "$TNI"
-				read INSTALL
-				if [[ "$INSTALL" = "install" ]]
-				then
-					install_ha3mrx
-				else
-					continue
-				fi
-		fi
-	elif [[ "$TOOLKIT" = 00 ]]
-	then
-		clear
-		exec bash $0
-	elif [[ "$TOOLKIT" = "back" || "$TOOLKIT" = "b" ]]
-	then
-		break
-	elif [[ "$TOOLKIT" = 0 ]]
-	then
-		clear
-		exit
-	fi
-  done
-}
 function remote_access
 {
 	while true 
