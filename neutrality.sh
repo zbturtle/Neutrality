@@ -281,13 +281,16 @@ function banner
 	echo -e "$COL 8888b   888                   888                     888 Y8P 888            $CE"
 	echo -e "$COL 88888b  888                   888                     888     888             $CE   by "$COL"AN UNNAMED INDIVIDUAL $CE"
 	echo -e "$COL 888Y88b 888  .d88b.  888  888 888888 888d888  8888b.  888 888 888888 888  888 $CE"
-  echo -e "$COL 888 Y88b888 d8P  Y8b 888  888 888    888P"       "88b 888 888 888    888  888 $CE"
-  echo -e "$COL 888  Y88888 88888888 888  888 888    888     .d888888 888 888 888    888  888 $CE"
-  echo -e "$COL 888   Y8888 Y8b.     Y88b 888 Y88b.  888     888  888 888 888 Y88b.  Y88b 888 $CE"
-  echo -e "$COL 888    Y888  "Y8888   "Y88888  "Y888 888     "Y888888 888 888  "Y888  "Y88888 $CE"
-  echo -e "$COL                                                                           888 $CE"
+	echo -e "$COL 888 Y88b888 d8P  Y8b 888  888 888    888P"       "88b 888 888 888    888  888 $CE"
+ 	echo -e "$COL 888  Y88888 88888888 888  888 888    888     .d888888 888 888 888    888  888 $CE"
+ 	echo -e "$COL 888   Y8888 Y8b.     Y88b 888 Y88b.  888     888  888 888 888 Y88b.  Y88b 888 $CE"
+  	echo -e "$COL 888    Y888  "Y8888   "Y88888  "Y888 888     "Y888888 888 888  "Y888  "Y88888 $CE"
+  	echo -e "$COL                                                                           888 $CE"
 	echo -e "$COL                                                                      Y8b d88P$CE"
 	echo -e "$COL The                                                                   "Y88P"             script$CE"
+	echo
+	echo -e "\e[1;29m------------------------------------------------------------------------------\e[0m"
+	echo
 	echo -e ""$YS"if"$CE") Ifconfig           "$YS"l"$CE") Local IPs & gateways "$RS"|"$CE"  "$YS"scan"$CE") Arp-scan network"
 	if [[ "$WLANCHECKING" = "" ]]
 	then
