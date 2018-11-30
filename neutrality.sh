@@ -87,7 +87,7 @@ toolarray=(
 "websploit" "openvas" "shellter" "geany" "bleachbit" "vmr" "hashbuster" "findsploit" "howdoi" "operative" "netattack2" "koadic" "empire" "meterpreter_paranoid_mode"
 "dropit_frmw" "wifi_pumpkin" "veil" "leviathan" "fake_image" "avet" "gloom" "arcanus" "msfpc" "morphhta" "lfi" "unibyav" "demiguise" "dkmc" "sechub" "beef" "mitmf"
 "fsociety" "arp_scan" "netool" "sqlmap" "patator" "zeus" "evil_droid" "nosqlmap" "eggshell" "zerodoor" "cromos" "yuki-chan" "socialfish" "autosploit" "blazy"
-"striker" "hyprpulse" "instaburst" "instagram-py" "datasploit" "sitebroker" "enigma" "ha3mrx"
+"striker" "hyprpulse" "instaburst" "instagram-py" "datasploit" "sitebroker" "enigma" "ha3mrx" "hacktronian"
 )
 #setting frequent stings
 	YNYES="("$YS"y"$CE"/"$YS"n"$CE")("$YS"Enter"$CE"=yes)"
@@ -281,16 +281,13 @@ function banner
 	echo -e "$COL 8888b   888                   888                     888 Y8P 888            $CE"
 	echo -e "$COL 88888b  888                   888                     888     888             $CE   by "$COL"AN UNNAMED INDIVIDUAL $CE"
 	echo -e "$COL 888Y88b 888  .d88b.  888  888 888888 888d888  8888b.  888 888 888888 888  888 $CE"
-	echo -e "$COL 888 Y88b888 d8P  Y8b 888  888 888    888P"       "88b 888 888 888    888  888 $CE"
- 	echo -e "$COL 888  Y88888 88888888 888  888 888    888     .d888888 888 888 888    888  888 $CE"
- 	echo -e "$COL 888   Y8888 Y8b.     Y88b 888 Y88b.  888     888  888 888 888 Y88b.  Y88b 888 $CE"
-  	echo -e "$COL 888    Y888  "Y8888   "Y88888  "Y888 888     "Y888888 888 888  "Y888  "Y88888 $CE"
-  	echo -e "$COL                                                                           888 $CE"
+  echo -e "$COL 888 Y88b888 d8P  Y8b 888  888 888    888P"       "88b 888 888 888    888  888 $CE"
+  echo -e "$COL 888  Y88888 88888888 888  888 888    888     .d888888 888 888 888    888  888 $CE"
+  echo -e "$COL 888   Y8888 Y8b.     Y88b 888 Y88b.  888     888  888 888 888 Y88b.  Y88b 888 $CE"
+  echo -e "$COL 888    Y888  "Y8888   "Y88888  "Y888 888     "Y888888 888 888  "Y888  "Y88888 $CE"
+  echo -e "$COL                                                                           888 $CE"
 	echo -e "$COL                                                                      Y8b d88P$CE"
 	echo -e "$COL The                                                                   "Y88P"             script$CE"
-	echo
-	echo -e "\e[1;29m------------------------------------------------------------------------------\e[0m"
-	echo
 	echo -e ""$YS"if"$CE") Ifconfig           "$YS"l"$CE") Local IPs & gateways "$RS"|"$CE"  "$YS"scan"$CE") Arp-scan network"
 	if [[ "$WLANCHECKING" = "" ]]
 	then
@@ -866,6 +863,11 @@ function listshortcuts
 		TITLE="Ha3MrX"
 		NAMECD="cd /root/Ha3MrX"
 		KSSET="python Ha3MrX.py"
+	elif [[ "$nn" = "55" ]]
+	then
+		TITLE="Hacktronian"
+		NAMECD="cd /root/hacktronian"
+		KSSET="python hacktronian.py"
 	fi
 }
 function reinstall_tools
@@ -3988,6 +3990,11 @@ do
 		echo -e ""$YS"1"$CE") Ha3MrX            A hacking toolkit containing numerous tools, many for penetration testing"
 	else
 		echo -e ""$RS"1"$CE") "$RS"Ha3MrX"$CE"            A hacking toolkit containing numerous tools, many for penetration testing"
+  elif [[ -d /root/hacktronian ]]
+	then
+		echo -e ""$YS"2"$CE") Hacktronian            A large hacking toolkit with a large variety of tools"
+	else
+		echo -e ""$RS"2"$CE") "$RS"Hacktronian"$CE"            A large hacking toolkit with a large variety of tools"
 	fi
 	echo -e ""$YS" b"$CE") Go back"
 	echo -e ""$YS" 0"$CE") EXIT"
@@ -3997,15 +4004,32 @@ do
 	then
 		if [[ -f /root/Ha3MrX ]]
 		then
-      cd /root/Ha3MrX
-			python Ha3MrX.py
-      cd
+     cd /root/Ha3MrX
+		 python Ha3MrX.py
+     cd
 		else
 			echo -e "$TNI"
 				read INSTALL
 				if [[ "$INSTALL" = "install" ]]
 				then
 					install_ha3mrx
+				else
+					continue
+				fi
+		fi
+  elif [[ "$TOOLKIT" = 2 ]]
+	  then
+    if [[ -f /root/hacktronian ]]
+		then
+     cd /root/hacktronian
+		 python hacktronian.py
+     cd
+		else
+			echo -e "$TNI"
+				read INSTALL
+				if [[ "$INSTALL" = "install" ]]
+				then
+					install_hacktronian
 				else
 					continue
 				fi
@@ -9753,6 +9777,19 @@ check_if_ks
 			chmod +x install.sh
 			sudo bash install.sh
       sudo python Ha3MrX.py
+		fi
+	}
+  function install_hacktronian
+	{
+		foldname="hacktronian"
+		gitlink="https://github.com/thehackingsage/hacktronian.git"
+		install_default
+		cloned=$?
+		if [[ "$cloned" == 1 ]]
+		then
+			chmod +x install.sh
+			sudo bash install.sh
+      sudo python hacktronian.py
 		fi
 	}
 	function install_wifite
