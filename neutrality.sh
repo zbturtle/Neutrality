@@ -3994,7 +3994,7 @@ do
 	then
 		if [[ -f /root/Ha3MrX ]]
 		then
-     cd /root/Ha3MrX
+      cd /root/Ha3MrX
 			python Ha3MrX.py
       cd
 		else
