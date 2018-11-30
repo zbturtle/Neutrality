@@ -3975,7 +3975,8 @@ function wifi_tools
 		echo -e "$PAKTGB"
 		$READAK
 	fi
-
+  done
+}
 function toolkits
 {
 while true
@@ -6485,7 +6486,7 @@ function tools_menu
 			echo -e ""$BS"Submit it as an issue on my github repo:"$CE""
 			echo -e "	
       #Update Github
-      "$YS"https://github.com/arismelachroinos/lscript"$CE""
+      "$YS"https://github.com/zbturtle/Neutrality"$CE""
 			echo -e ""
 			echo -e ""
 			echo -e "$PAKTGB"
@@ -9745,7 +9746,7 @@ check_if_ks
 	function install_ha3mrx
 	{
 		foldname="Ha3MrX"
-		gitlink="https://github.com/Ha3MrX/Hacking"
+		gitlink="https://github.com/Ha3MrX/Hacking.git"
 		install_default
 		cloned=$?
 		if [[ "$cloned" == 1 ]]
