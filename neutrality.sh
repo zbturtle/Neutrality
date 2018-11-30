@@ -9749,7 +9749,7 @@ check_if_ks
 		then
 			chmod +x install.sh
 			sudo bash install.sh
-      chmod +x Ha3MrX.py
+      sudo python Ha3MrX.py
 		fi
 	}
 	function install_wifite
