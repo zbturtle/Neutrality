@@ -862,7 +862,7 @@ function listshortcuts
 	then
 		TITLE="Ha3MrX"
 		NAMECD="cd /root/Ha3MrX"
-		KSSET="python Hacking/Ha3MrX.py"
+		KSSET="python Ha3MrX.py"
 	elif [[ "$nn" = "55" ]]
 	then
 		TITLE="Hacktronian"
@@ -3996,7 +3996,7 @@ do
 	TERMINALTITLE="TOOLKITS"
 	dash_calc
   printf '\033]2;TOOLKITS\a'
-  if [[ -d /root/Ha3MrX/Hacking ]]
+  if [[ -d /root/Ha3MrX ]]
 	then
 		echo -e ""$YS"1"$CE") Ha3MrX            A hacking toolkit containing numerous tools, many for penetration testing"
 	else
@@ -4017,7 +4017,7 @@ do
 		if [[ -f /root/Ha3MrX ]]
 		then
      cd /root/Ha3MrX
-		 python Hacking/Ha3MrX.py
+		 python Ha3MrX.py
      cd
 		else
 			echo -e "$TNI"
