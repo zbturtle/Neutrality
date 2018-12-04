@@ -3996,7 +3996,7 @@ do
 	TERMINALTITLE="TOOLKITS"
 	dash_calc
   printf '\033]2;TOOLKITS\a'
-  if [[ -d /root/Ha3MrX ]]
+  if [[ -d /root/Ha3MrX/Hacking ]]
 	then
 		echo -e ""$YS"1"$CE") Ha3MrX            A hacking toolkit containing numerous tools, many for penetration testing"
 	else
@@ -4016,7 +4016,7 @@ do
 	then
 		if [[ -f /root/Ha3MrX ]]
 		then
-     cd /root/Ha3MrX
+     cd /root/Ha3MrX/Hacking
 		 python Ha3MrX.py
      cd
 		else
