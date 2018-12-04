@@ -1048,6 +1048,8 @@ done
 	#~ echo -e ""$YS"18"$CE") Katana       "$YS"38"$CE") CHAOS         "$YS"58"$CE") Empire           "$YS"78"$CE") NoSQLMap"
 	#~ echo -e ""$YS"19"$CE") Airgeddon    "$YS"39"$CE") Routersploit  "$YS"59"$CE") Meterpr.-Paranoid"
 	#~ echo -e ""$YS"20"$CE") Websploit    "$YS"40"$CE") Geany         "$YS"60"$CE") Dr0p1t"
+  #~ echo -e "------------------------------------------------------------------"
+	#~ echo -e ""$YS"81"$CE") Ha3mrx       "$YS"80"$CE") Hacktronian   "$YS"79"$CE") Undefined"
 	#~ echo -e ""$YS" b"$CE") Go back"
 	#~ echo -e ""$YS" 0"$CE") Exit"
 	#~ echo -e "Choose: "
@@ -1287,6 +1289,15 @@ done
 	#~ elif [[ "$REIN" = "78" ]]
 	#~ then
 		#~ install_nosqlmap
+  #~ elif [[ "$REIN" = "79" ]]
+	#~ then
+		#~ install_evil_droid
+  #~ elif [[ "$REIN" = "80" ]]
+	#~ then
+		#~ install_hacktronian
+  #~ elif [[ "$REIN" = "81" ]]
+	#~ then
+		#~ install_ha3mrx
 	#~ elif [[ "$REIN" = "back" || "$REIN" = "b" ]]
 	#~ then
 		#~ clear
