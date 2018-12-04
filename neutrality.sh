@@ -861,8 +861,8 @@ function listshortcuts
   elif [[ "$nn" = "54" ]]
 	then
 		TITLE="Ha3MrX"
-		NAMECD="cd /root/Ha3MrX/Hacking"
-		KSSET="python Ha3MrX.py"
+		NAMECD="cd /root/Ha3MrX"
+		KSSET="python Hacking/Ha3MrX.py"
 	elif [[ "$nn" = "55" ]]
 	then
 		TITLE="Hacktronian"
@@ -4016,8 +4016,8 @@ do
 	then
 		if [[ -f /root/Ha3MrX ]]
 		then
-     cd /root/Ha3MrX/Hacking
-		 python Ha3MrX.py
+     cd /root/Ha3MrX
+		 python Hacking/Ha3MrX.py
      cd
 		else
 			echo -e "$TNI"
@@ -9788,7 +9788,7 @@ check_if_ks
 		then
 			chmod +x install.sh
 			sudo bash install.sh
-      sudo python Hacking/Ha3MrX.py
+      sudo python Ha3MrX.py
 		fi
 	}
   function install_hacktronian
