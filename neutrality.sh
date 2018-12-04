@@ -4001,7 +4001,8 @@ do
 		echo -e ""$YS"1"$CE") Ha3MrX            A hacking toolkit containing numerous tools, many for penetration testing"
 	else
 		echo -e ""$RS"1"$CE") "$RS"Ha3MrX"$CE"            A hacking toolkit containing numerous tools, many for penetration testing"
-  elif [[ -d /root/hacktronian ]]
+  fi
+  if [[ -d /root/hacktronian ]]
 	then
 		echo -e ""$YS"2"$CE") Hacktronian            A large hacking toolkit with a large variety of tools"
 	else
