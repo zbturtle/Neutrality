@@ -4014,9 +4014,9 @@ do
 	read -e TOOLKIT
 	if [[ "$TOOLKIT" = 1 ]]
 	then
-		if [[ -f /root/Hacking ]]
+		if [[ -f /root/Ha3MrX ]]
 		then
-     cd /root/Hacking
+     cd /root/Ha3MrX/Hacking
 		 python Ha3MrX.py
      cd
 		else
@@ -9788,6 +9788,7 @@ check_if_ks
 		then
 			chmod +x install.sh
 			sudo bash install.sh
+      cd Hacking
       sudo python Ha3MrX.py
 		fi
 	}
