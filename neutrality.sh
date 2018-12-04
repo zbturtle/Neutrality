@@ -861,7 +861,7 @@ function listshortcuts
   elif [[ "$nn" = "54" ]]
 	then
 		TITLE="Ha3MrX"
-		NAMECD="cd /root/Ha3MrX"
+		NAMECD="cd /root/Ha3MrX/Hacking"
 		KSSET="python Ha3MrX.py"
 	elif [[ "$nn" = "55" ]]
 	then
@@ -9788,8 +9788,7 @@ check_if_ks
 		then
 			chmod +x install.sh
 			sudo bash install.sh
-      cd Hacking
-      sudo python Ha3MrX.py
+      sudo python Hacking/Ha3MrX.py
 		fi
 	}
   function install_hacktronian
