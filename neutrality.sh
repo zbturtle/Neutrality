@@ -4014,9 +4014,9 @@ do
 	read -e TOOLKIT
 	if [[ "$TOOLKIT" = 1 ]]
 	then
-		if [[ -f /root/Ha3MrX ]]
+		if [[ -f /root/Hacking ]]
 		then
-     cd /root/Ha3MrX/Hacking
+     cd /root/Hacking
 		 python Ha3MrX.py
      cd
 		else
