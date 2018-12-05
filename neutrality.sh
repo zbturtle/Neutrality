@@ -3,7 +3,7 @@
 # set -x
 VERSION=2.1.5
 #Number of tools with keyboard shortcut support
-HOWMANYTOOLS=53
+HOWMANYTOOLS=56
 BACKL="0"
 DONATIONS=10
 LATESTCHANGELOGLINES=26
@@ -4001,7 +4001,7 @@ do
 	TERMINALTITLE="HELPFUL EXPLOITS"
 	dash_calc
     printf '\033]2;HELPFUL EXPLOITS\a'
-  if [[ -d /root/coffeeMiner ]]
+  if [[ -d /root/CoffeeMiner ]]
 	then
 		echo -e ""$YS"1"$CE") CoffeeMiner            Used for injecting code to mine cryptocurrency off of a network."
 	else
@@ -9874,7 +9874,7 @@ check_if_ks
 	}
 	function install_coffeeminer
 	{
-		foldname="CoffeeMiner"
+		foldname="coffeeMiner"
 		gitlink="https://github.com/zbturtle/coffeeMiner.git"
 		install_default
 		cloned=$?
