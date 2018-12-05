@@ -87,7 +87,7 @@ toolarray=(
 "websploit" "openvas" "shellter" "geany" "bleachbit" "vmr" "hashbuster" "findsploit" "howdoi" "operative" "netattack2" "koadic" "empire" "meterpreter_paranoid_mode"
 "dropit_frmw" "wifi_pumpkin" "veil" "leviathan" "fake_image" "avet" "gloom" "arcanus" "msfpc" "morphhta" "lfi" "unibyav" "demiguise" "dkmc" "sechub" "beef" "mitmf"
 "fsociety" "arp_scan" "netool" "sqlmap" "patator" "zeus" "evil_droid" "nosqlmap" "eggshell" "zerodoor" "cromos" "yuki-chan" "socialfish" "autosploit" "blazy"
-"striker" "hyprpulse" "instaburst" "instagram-py" "datasploit" "sitebroker" "enigma" "ha3mrx" "hacktronian"
+"striker" "hyprpulse" "instaburst" "instagram-py" "datasploit" "sitebroker" "enigma" "ha3mrx" "hacktronian" "coffeeminer"
 )
 #setting frequent stings
 	YNYES="("$YS"y"$CE"/"$YS"n"$CE")("$YS"Enter"$CE"=yes)"
@@ -279,13 +279,13 @@ function banner
 	echo -e ""
 	echo -e "$COL 888b    888                   888                     888 d8b 888    $CE v$VERSION"
 	echo -e "$COL 8888b   888                   888                     888 Y8P 888            $CE"
-	echo -e "$COL 88888b  888                   888                     888     888             $CE   by "$COL"AN UNNAMED INDIVIDUAL $CE"
+	echo -e "$COL 88888b  888                   888                     888     888             $CE   by "$COL" ZBTURTLE $CE"
 	echo -e "$COL 888Y88b 888  .d88b.  888  888 888888 888d888  8888b.  888 888 888888 888  888 $CE"
-  echo -e "$COL 888 Y88b888 d8P  Y8b 888  888 888    888P"       "88b 888 888 888    888  888 $CE"
-  echo -e "$COL 888  Y88888 88888888 888  888 888    888     .d888888 888 888 888    888  888 $CE"
-  echo -e "$COL 888   Y8888 Y8b.     Y88b 888 Y88b.  888     888  888 888 888 Y88b.  Y88b 888 $CE"
-  echo -e "$COL 888    Y888  "Y8888   "Y88888  "Y888 888     "Y888888 888 888  "Y888  "Y88888 $CE"
-  echo -e "$COL                                                                           888 $CE"
+    echo -e "$COL 888 Y88b888 d8P  Y8b 888  888 888    888P"       "88b 888 888 888    888  888 $CE"
+    echo -e "$COL 888  Y88888 88888888 888  888 888    888     .d888888 888 888 888    888  888 $CE"
+    echo -e "$COL 888   Y8888 Y8b.     Y88b 888 Y88b.  888     888  888 888 888 Y88b.  Y88b 888 $CE"
+    echo -e "$COL 888    Y888  "Y8888   "Y88888  "Y888 888     "Y888888 888 888  "Y888  "Y88888 $CE"
+    echo -e "$COL                                                                           888 $CE"
 	echo -e "$COL                                                                      Y8b d88P$CE"
 	echo -e "$COL The                                                                   "Y88P"             script$CE"
 	echo -e ""$YS"if"$CE") Ifconfig           "$YS"l"$CE") Local IPs & gateways "$RS"|"$CE"  "$YS"scan"$CE") Arp-scan network"
@@ -858,12 +858,17 @@ function listshortcuts
 		TITLE="Yuki-Chan-The-Auto-Pentest"
 		NAMECD="cd /root/Yuki-Chan-The-Auto-Pentest"
 		KSSET="./yuki.sh"
-  elif [[ "$nn" = "54" ]]
+    elif [[ "$nn" = "54" ]]
 	then
 		TITLE="Ha3MrX"
 		NAMECD="cd /root/Ha3MrX"
 		KSSET="python Ha3MrX.py"
-	elif [[ "$nn" = "55" ]]
+    elif [[ "$nn" = "55" ]]
+	then
+		TITLE="CoffeeMiner"
+		NAMECD="cd /root/coffeeMiner"
+		KSSET="python coffeeMiner.py"
+	elif [[ "$nn" = "56" ]]
 	then
 		TITLE="Hacktronian"
 		NAMECD="cd /root/hacktronian"
@@ -1049,7 +1054,7 @@ done
 	#~ echo -e ""$YS"19"$CE") Airgeddon    "$YS"39"$CE") Routersploit  "$YS"59"$CE") Meterpr.-Paranoid"
 	#~ echo -e ""$YS"20"$CE") Websploit    "$YS"40"$CE") Geany         "$YS"60"$CE") Dr0p1t"
   #~ echo -e "------------------------------------------------------------------"
-	#~ echo -e ""$YS"81"$CE") Ha3mrx       "$YS"80"$CE") Hacktronian   "$YS"79"$CE") Undefined"
+	#~ echo -e ""$YS"81"$CE") Ha3mrx       "$YS"80"$CE") Hacktronian   "$YS"79"$CE") CoffeeMiner"
 	#~ echo -e ""$YS" b"$CE") Go back"
 	#~ echo -e ""$YS" 0"$CE") Exit"
 	#~ echo -e "Choose: "
@@ -1356,10 +1361,10 @@ then
 	echo -e "I mean...Try to see if you have audio."
 	sleep 3
 	echo -e " "
-	echo -e "That's all i can do :/"
+	echo -e "That's all I can do :/"
 	sleep 2
 	echo -e " "
-	echo -e "If it wasn't fix , then try rebooting"
+	echo -e "If it wasn't fixed, then try rebooting"
 elif [[ "$ERRS" = "2" ]]
 then
 	clear
@@ -1389,13 +1394,13 @@ then
 elif [[ "$ERRS" = "5" ]]
 then
 	service nginx stop
-	echo -e "I think i fixed it. Try again: service apache2 start "
+	echo -e "I think I fixed it. Try again: service apache2 start "
 	sleep 5
 elif [[ "$ERRS" = "6" ]]
 then
 	echo "deb http://http.kali.org/kali kali-rolling main non-free contrib" > /etc/apt/sources.list
 	rm -r -f /etc/apt/sources.list.d/*
-	echo -e "Try   apt-get update    again. That's all i can do."
+	echo -e "Try   apt-get update    again. That's all I can do."
 	sleep 3
 elif [[ "$ERRS" = "7" ]]
 then
@@ -3988,6 +3993,78 @@ function wifi_tools
 	fi
 	done
 }
+function helpful_exploits
+{
+while true
+do
+	clear
+	TERMINALTITLE="HELPFUL EXPLOITS"
+	dash_calc
+    printf '\033]2;HELPFUL EXPLOITS\a'
+  if [[ -d /root/coffeeMiner ]]
+	then
+		echo -e ""$YS"1"$CE") CoffeeMiner            Used for injecting code to mine cryptocurrency off of a network."
+	else
+		echo -e ""$RS"1"$CE") "$RS"CoffeeMiner"$CE"            Used for injecting code to mine cryptocurrency off of a network."
+  fi
+  if [[ -d /root/hacktronian ]]
+	then
+		echo -e ""$YS"2"$CE") Placeholder            A large hacking toolkit with a large variety of tools"
+	else
+		echo -e ""$RS"2"$CE") "$RS"Placeholder"$CE"            A large hacking toolkit with a large variety of tools"
+	fi
+	echo -e ""$YS" b"$CE") Go back"
+	echo -e ""$YS" 0"$CE") EXIT"
+	echo -e "Choose: "
+	read -e HELPFULEXPLOITS
+	if [[ "$HELPFULEXPLOITS" = 1 ]]
+	then
+		if [[ -f /root/coffeeMiner ]]
+		then
+     cd /root/coffeeMiner
+		 python coffeeMiner.py
+     cd
+		else
+			echo -e "$TNI"
+				read INSTALL
+				if [[ "$INSTALL" = "install" ]]
+				then
+					install_coffeeminer
+				else
+					continue
+				fi
+		fi
+  elif [[ "$HELPFULEXPLOITS" = 2 ]]
+	  then
+    if [[ -f /root/hacktronian ]]
+		then
+     cd /root/hacktronian
+		 python hacktronian.py
+     cd
+		else
+			echo -e "$TNI"
+				read INSTALL
+				if [[ "$INSTALL" = "install" ]]
+				then
+					install_hacktronian
+				else
+					continue
+				fi
+		fi
+	elif [[ "$HELPFULEXPLOITS" = 00 ]]
+	then
+		clear
+		exec bash $0
+	elif [[ "$HELPFULEXPLOITS" = "back" || "$HELPFULEXPLOITS" = "b" ]]
+	then
+		break
+	elif [[ "$HELPFULEXPLOITS" = 0 ]]
+	then
+		clear
+		exit
+	fi
+  done
+}
 function toolkits
 {
 while true
@@ -6460,7 +6537,8 @@ function tools_menu
 	echo -e ""$YS" 4"$CE") Webside tools"
 	echo -e ""$YS" 5"$CE") Others"
 	echo -e ""$YS" 6"$CE") Install/reinstall a tool"
-  echo -e ""$YS" 7"$CE") Toolkits"
+    echo -e ""$YS" 7"$CE") Toolkits"
+    echo -e ""$YS" 8"$CE") Helpful exploits"
 	echo -e ""$YS" i"$CE") Info"
 	echo -e ""$YS" b"$CE") Go back"
 	#~ echo -e ""$YS"00"$CE") Main menu"
@@ -6488,9 +6566,12 @@ function tools_menu
 			NOCONFIRM=0
 			reinstall_tools
 			NOCONFIRM=0
-    elif [[ "$CATEG" = "7" ]]
+        elif [[ "$CATEG" = "7" ]]
 		then
 			toolkits
+		elif [[ "$CATEG" = "8" ]]
+		then
+			helpful_exploits
 		elif [[ "$CATEG" = "0" ]]
 		then
 			clear
@@ -9386,7 +9467,7 @@ function main_options
 			else
 				na=""
 			fi
-			echo -e "How do i :  "
+			echo -e "How do I :  "
 			read HOW
 			howdoi $co $na $ol $df $HOW
 		fi
@@ -9788,7 +9869,20 @@ check_if_ks
 		then
 			chmod +x install.sh
 			sudo bash install.sh
-      sudo python Ha3MrX.py
+            sudo python Ha3MrX.py
+		fi
+	}
+	function install_coffeeminer
+	{
+		foldname="CoffeeMiner"
+		gitlink="https://github.com/zbturtle/coffeeMiner.git"
+		install_default
+		cloned=$?
+		if [[ "$cloned" == 1 ]]
+		then
+			chmod +x install.sh
+			sudo bash install.sh
+            sudo python coffeeMiner.py
 		fi
 	}
   function install_hacktronian
