@@ -1,1 +1,1 @@
-Neutrality is hacking toolkit built off of others.
+Neutrality is a hacking toolkit built off of others.
