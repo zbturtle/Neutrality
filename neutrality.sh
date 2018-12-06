@@ -3,7 +3,7 @@
 # set -x
 VERSION=2.1.5
 #Number of tools with keyboard shortcut support
-HOWMANYTOOLS=56
+HOWMANYTOOLS=57
 BACKL="0"
 DONATIONS=10
 LATESTCHANGELOGLINES=26
@@ -6684,15 +6684,15 @@ function terms_of_use
 	echo -e "This tool is only for educational purposes only."
 	echo -e "Use this tool only on your own network and never without permission."
 	echo -e "I am not responsible for anything you do with this tool."
-	echo -e "Will you use this tool only on your own network and only with your own responsibility?("$YS"YES"$CE"/"$YS"NO"$CE"): "
+	echo -e "Will you use this tool only on your own network or networks you are permitted to test on responsibly?("$YS"YES"$CE"/"$YS"NO"$CE"): "
 	read YESORNO
 	if [[ "$YESORNO" = "YES" ]]
 	then 
-		echo "You have agreed the terms and you use this tool with your own responsibility." > "$LPATH"/IAGREE.txt
+		echo "You have agreed the terms and you have also agreed to use this tool responsibly." > "$LPATH"/IAGREE.txt
 		sleep 1
 		clear
 	else
-		echo -e "You didn't type 'YES' , so you cannot continue"
+		echo -e "You didn't type 'YES', so you cannot continue"
 		sleep 4
 	fi
 	exec bash "$0"
