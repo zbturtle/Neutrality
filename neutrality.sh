@@ -861,7 +861,7 @@ function listshortcuts
     elif [[ "$nn" = "54" ]]
 	then
 		TITLE="Ha3MrX"
-		NAMECD="cd /root/Ha3MrX"
+		NAMECD="cd /root/Hacking"
 		KSSET="python Ha3MrX.py"
     elif [[ "$nn" = "55" ]]
 	then
@@ -4106,7 +4106,7 @@ do
 	TERMINALTITLE="TOOLKITS"
 	dash_calc
   printf '\033]2;TOOLKITS\a'
-  if [[ -d /root/Ha3MrX ]]
+  if [[ -d /root/Hacking ]]
 	then
 		echo -e ""$YS"1"$CE") Ha3MrX            A hacking toolkit containing numerous tools, many for penetration testing"
 	else
@@ -4124,7 +4124,7 @@ do
 	read -e TOOLKIT
 	if [[ "$TOOLKIT" = 1 ]]
 	then
-		if [[ -f /root/Ha3MrX ]]
+		if [[ -f /root/Hacking ]]
 		then
      cd /root/Ha3MrX
 		 python Ha3MrX.py
@@ -9894,7 +9894,7 @@ check_if_ks
 	}
 	function install_ha3mrx
 	{
-		foldname="Ha3MrX"
+		foldname="Hacking"
 		gitlink="https://github.com/Ha3MrX/Hacking.git"
 		install_default
 		cloned=$?
