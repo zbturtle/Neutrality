@@ -86,8 +86,8 @@ toolarray=(
 "recondog" "redhawk" "winpayloads" "chaos" "routersploit" "infoga" "nwatch" "eternalscanner" "eaphammer" "dagon" "lalin" "knockmail" "kwetza" "ngrok" "netdiscover"
 "websploit" "openvas" "shellter" "geany" "bleachbit" "vmr" "hashbuster" "findsploit" "howdoi" "operative" "netattack2" "koadic" "empire" "meterpreter_paranoid_mode"
 "dropit_frmw" "wifi_pumpkin" "veil" "leviathan" "fake_image" "avet" "gloom" "arcanus" "msfpc" "morphhta" "lfi" "unibyav" "demiguise" "dkmc" "sechub" "beef" "mitmf"
-"fsociety" "arp_scan" "netool" "sqlmap" "patator" "zeus" "evil_droid" "nosqlmap" "eggshell" "zerodoor" "cromos" "yuki-chan" "socialfish" "autosploit" "blazy"
-"striker" "hyprpulse" "instaburst" "instagram-py" "datasploit" "sitebroker" "enigma" "ha3mrx" "hacktronian" "coffeeminer"
+"fsociety" "arp_scan" "netool" "sqlmap" "patator" "zeus" "evil_droid" "nosqlmap" "eggshell" "zerodoor" "cromos" "yuki-chan" "socialfish" "wifi-hacker" "autosploit" "blazy"
+"striker" "hyprpulse" "instaburst" "instagram-py" "datasploit" "sitebroker" "enigma" "ha3mrx" "hacktronian" "coffeeminer" "pwnedornot"
 )
 #setting frequent stings
 	YNYES="("$YS"y"$CE"/"$YS"n"$CE")("$YS"Enter"$CE"=yes)"
@@ -865,10 +865,20 @@ function listshortcuts
 		KSSET="python Ha3MrX.py"
     elif [[ "$nn" = "55" ]]
 	then
+		TITLE="Wifi-Hacker"
+		NAMECD="cd /root/wifi-hacker"
+		KSSET="bash wifi-hacker.sh"
+    elif [[ "$nn" = "56" ]]
+	then
 		TITLE="CoffeeMiner"
 		NAMECD="cd /root/coffeeMiner"
 		KSSET="python coffeeMiner.py"
-	elif [[ "$nn" = "56" ]]
+    elif [[ "$nn" = "57" ]]
+	then
+		TITLE="PwnedOrNot"
+		NAMECD="cd /root/pwnedOrNot"
+		KSSET="python pwnedornot.py"
+	elif [[ "$nn" = "58" ]]
 	then
 		TITLE="Hacktronian"
 		NAMECD="cd /root/hacktronian"
@@ -3347,6 +3357,18 @@ function wifi_tools
 	else
 		echo -e ""$RS"30"$CE") "$RS"SocialFish"$CE"            Ultimate phishing tool with Ngrok integrated"
 	fi
+    if [[ -d /root/wifi-hacker ]]
+	then
+		echo -e ""$YS"31"$CE") Wifi-Hacker           The basic wifi hacking tool"
+	else
+		echo -e ""$RS"31"$CE") "$RS"Wifi-Hacker"$CE"           The basic wifi hacking tool"
+	fi
+	if [[ -d /root/pwnedOrNot ]]
+	then
+		echo -e ""$YS"32"$CE") PwnedOrNot            A information gathering, and hacking tool"
+	else
+		echo -e ""$RS"32"$CE") "$RS"PwnedOrNot"$CE"            A information gathering, and hacking tool"
+	fi
 	echo -e ""$YS" b"$CE") Go back"
 	echo -e ""$YS"00"$CE") Main menu"
 	#echo -e ""$YS" 0"$CE") EXIT"
@@ -3902,6 +3924,40 @@ function wifi_tools
 			fi
 		fi
 		cd
+	elif [[ "$APPP" = "31" ]]
+	then
+		if [[ -d "/root/wifi-hacker" ]]
+		then
+			cd /root/wifi-hacker
+			bash wifi-hacker.sh
+		else
+			echo -e "$TNI"
+			read INSTALL
+			if [[ "$INSTALL" = "install" ]]
+			then
+				install_wifihacker
+			else
+				continue
+			fi
+		fi
+		cd
+	elif [[ "$APPP" = "32" ]]
+	then
+		if [[ -d "/root/pwnedOrNot" ]]
+		then
+			cd /root/pwnedOrNot
+			python pwnedornot.py
+		else
+			echo -e "$TNI"
+			read INSTALL
+			if [[ "$INSTALL" = "install" ]]
+			then
+				install_pwnedornot
+			else
+				continue
+			fi
+		fi
+		cd
 	elif [[ "$APPP" = "7" ]]
 	then
 		if [[ -d "/root/hakkuframework" ]]
@@ -4007,12 +4063,6 @@ do
 	else
 		echo -e ""$RS"1"$CE") "$RS"CoffeeMiner"$CE"            Used for injecting code to mine cryptocurrency off of a network."
   fi
-  if [[ -d /root/hacktronian ]]
-	then
-		echo -e ""$YS"2"$CE") Placeholder            A large hacking toolkit with a large variety of tools"
-	else
-		echo -e ""$RS"2"$CE") "$RS"Placeholder"$CE"            A large hacking toolkit with a large variety of tools"
-	fi
 	echo -e ""$YS" b"$CE") Go back"
 	echo -e ""$YS" 0"$CE") EXIT"
 	echo -e "Choose: "
@@ -4030,23 +4080,6 @@ do
 				if [[ "$INSTALL" = "install" ]]
 				then
 					install_coffeeminer
-				else
-					continue
-				fi
-		fi
-  elif [[ "$HELPFULEXPLOITS" = 2 ]]
-	  then
-    if [[ -f /root/hacktronian ]]
-		then
-     cd /root/hacktronian
-		 python hacktronian.py
-     cd
-		else
-			echo -e "$TNI"
-				read INSTALL
-				if [[ "$INSTALL" = "install" ]]
-				then
-					install_hacktronian
 				else
 					continue
 				fi
@@ -9885,7 +9918,7 @@ check_if_ks
             sudo python coffeeMiner.py
 		fi
 	}
-  function install_hacktronian
+    function install_hacktronian
 	{
 		foldname="hacktronian"
 		gitlink="https://github.com/thehackingsage/hacktronian.git"
@@ -9895,7 +9928,20 @@ check_if_ks
 		then
 			chmod +x install.sh
 			sudo bash install.sh
-      sudo python hacktronian.py
+            sudo python hacktronian.py
+		fi
+	}
+    function install_pwnedornot
+	{
+		foldname="pwnedOrNot"
+		gitlink="https://github.com/thewhiteh4t/pwnedOrNot.git"
+		install_default
+		cloned=$?
+		if [[ "$cloned" == 1 ]]
+		then
+			chmod 777 install.sh
+			sudo bash install.sh
+            sudo python pwnedornot.py
 		fi
 	}
 	function install_wifite
@@ -10812,6 +10858,17 @@ check_if_ks
 		then
 			pip install -r requirements.txt
 			pip2.7 install -r requirements.txt
+		fi
+	}
+	function install_wifihacker
+	{
+		foldname="wifi-hacker"
+		gitlink="https://github.com/esc0rtd3w/wifi-hacker.git"
+		install_default
+		cloned=$?
+		if [[ "$cloned" == 1 ]]
+		then
+			bash wifi-hacker.sh
 		fi
 	}
 	function install_autosploit
