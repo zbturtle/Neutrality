@@ -87,7 +87,7 @@ toolarray=(
 "websploit" "openvas" "shellter" "geany" "bleachbit" "vmr" "hashbuster" "findsploit" "howdoi" "operative" "netattack2" "koadic" "empire" "meterpreter_paranoid_mode"
 "dropit_frmw" "wifi_pumpkin" "veil" "leviathan" "fake_image" "avet" "gloom" "arcanus" "msfpc" "morphhta" "lfi" "unibyav" "demiguise" "dkmc" "sechub" "beef" "mitmf"
 "fsociety" "arp_scan" "netool" "sqlmap" "patator" "zeus" "evil_droid" "nosqlmap" "eggshell" "zerodoor" "cromos" "yuki-chan" "socialfish" "wifi-hacker" "autosploit" "blazy"
-"striker" "hyprpulse" "instaburst" "instagram-py" "datasploit" "sitebroker" "enigma" "ha3mrx" "hacktronian" "coffeeminer" "pwnedornot"
+"striker" "hyprpulse" "instaburst" "instagram-py" "datasploit" "sitebroker" "enigma" "ha3mrx" "hacktronian" "coffeeminer" "pwnedornot" "thechoice" "instaininsane"
 )
 #setting frequent stings
 	YNYES="("$YS"y"$CE"/"$YS"n"$CE")("$YS"Enter"$CE"=yes)"
@@ -883,6 +883,16 @@ function listshortcuts
 		TITLE="Hacktronian"
 		NAMECD="cd /root/hacktronian"
 		KSSET="python hacktronian.py"
+	elif [[ "$nn" = "59" ]]
+	then
+		TITLE="The Choice"
+		NAMECD="cd /root/thechoice"
+		KSSET="bash thechoice"
+	elif [[ "$nn" = "60" ]]
+	then
+		TITLE="Instain Insane"
+		NAMECD="cd /root/instainsaine"
+		KSSET="bash instainsaine.sh"
 	fi
 }
 function reinstall_tools
@@ -4059,9 +4069,9 @@ do
     printf '\033]2;HELPFUL EXPLOITS\a'
   if [[ -d /root/CoffeeMiner ]]
 	then
-		echo -e ""$YS"1"$CE") CoffeeMiner            Used for injecting code to mine cryptocurrency off of a network."
+		echo -e ""$YS"1"$CE") CoffeeMiner            Used for injecting code to mine cryptocurrency off of a network"
 	else
-		echo -e ""$RS"1"$CE") "$RS"CoffeeMiner"$CE"            Used for injecting code to mine cryptocurrency off of a network."
+		echo -e ""$RS"1"$CE") "$RS"CoffeeMiner"$CE"            Used for injecting code to mine cryptocurrency off of a network"
   fi
 	echo -e ""$YS" b"$CE") Go back"
 	echo -e ""$YS" 0"$CE") EXIT"
@@ -4098,6 +4108,55 @@ do
 	fi
   done
 }
+function social_tools
+{
+while true
+do
+	clear
+	TERMINALTITLE="SOCIAL TOOLS"
+	dash_calc
+    printf '\033]2;SOCIAL TOOLS\a'
+  if [[ -d /root/instaininsane ]]
+	then
+		echo -e ""$YS"1"$CE") Instain Insane            Used for multi-thread Instagram bruteforcing"
+	else
+		echo -e ""$RS"1"$CE") "$RS"Instain Insane"$CE"            Used for multi-thread Instagram bruteforcing"
+  fi
+	echo -e ""$YS" b"$CE") Go back"
+	echo -e ""$YS" 0"$CE") EXIT"
+	echo -e "Choose: "
+	read -e SOCIALTOOLS
+	if [[ "$SOCIALTOOLS" = 1 ]]
+	then
+		if [[ -f /root/instaininsane ]]
+		then
+     cd /root/instaininsane
+		 bash instaininsane.sh
+     cd
+		else
+			echo -e "$TNI"
+				read INSTALL
+				if [[ "$INSTALL" = "install" ]]
+				then
+					install_instaininsane
+				else
+					continue
+				fi
+		fi
+	elif [[ "$SOCIALTOOLS" = 00 ]]
+	then
+		clear
+		exec bash $0
+	elif [[ "$SOCIALTOOLS" = "back" || "$SOCIALTOOLS" = "b" ]]
+	then
+		break
+	elif [[ "$SOCIALTOOLS" = 0 ]]
+	then
+		clear
+		exit
+	fi
+  done
+}
 function toolkits
 {
 while true
@@ -4108,16 +4167,22 @@ do
   printf '\033]2;TOOLKITS\a'
   if [[ -d /root/Hacking ]]
 	then
-		echo -e ""$YS"1"$CE") Ha3MrX            A hacking toolkit containing numerous tools, many for penetration testing"
+		echo -e ""$YS"1"$CE") Ha3MrX                 A hacking toolkit containing numerous tools, many for penetration testing"
 	else
-		echo -e ""$RS"1"$CE") "$RS"Ha3MrX"$CE"            A hacking toolkit containing numerous tools, many for penetration testing"
+		echo -e ""$RS"1"$CE") "$RS"Ha3MrX"$CE"                 A hacking toolkit containing numerous tools, many for penetration testing"
   fi
   if [[ -d /root/hacktronian ]]
 	then
 		echo -e ""$YS"2"$CE") Hacktronian            A large hacking toolkit with a large variety of tools"
 	else
 		echo -e ""$RS"2"$CE") "$RS"Hacktronian"$CE"            A large hacking toolkit with a large variety of tools"
-	fi
+  fi
+  if [[ -d /root/thechoice ]]
+	then
+		echo -e ""$YS"3"$CE") The Choice             A handpicked hacking toolkit"
+	else
+		echo -e ""$RS"3"$CE") "$RS"The Choice"$CE"             A handpicked hacking toolkit"
+  fi
 	echo -e ""$YS" b"$CE") Go back"
 	echo -e ""$YS" 0"$CE") EXIT"
 	echo -e "Choose: "
@@ -4140,8 +4205,8 @@ do
 				fi
 		fi
   elif [[ "$TOOLKIT" = 2 ]]
-	  then
-    if [[ -f /root/hacktronian ]]
+  then
+        if [[ -f /root/hacktronian ]]
 		then
      cd /root/hacktronian
 		 python hacktronian.py
@@ -4152,6 +4217,23 @@ do
 				if [[ "$INSTALL" = "install" ]]
 				then
 					install_hacktronian
+				else
+					continue
+				fi
+		fi
+  elif [[ "$TOOLKIT" = 3 ]]
+  then
+        if [[ -f /root/thechoice ]]
+		then
+     cd /root/thechoice
+		 bash thechoice
+     cd
+		else
+			echo -e "$TNI"
+				read INSTALL
+				if [[ "$INSTALL" = "install" ]]
+				then
+					install_thechoice
 				else
 					continue
 				fi
@@ -6568,10 +6650,11 @@ function tools_menu
 	echo -e ""$YS" 2"$CE") Remote access"
 	echo -e ""$YS" 3"$CE") Information gathering"
 	echo -e ""$YS" 4"$CE") Webside tools"
-	echo -e ""$YS" 5"$CE") Others"
-	echo -e ""$YS" 6"$CE") Install/reinstall a tool"
-    echo -e ""$YS" 7"$CE") Toolkits"
-    echo -e ""$YS" 8"$CE") Helpful exploits"
+    echo -e ""$YS" 5"$CE") Toolkits"
+    echo -e ""$YS" 6"$CE") Helpful exploits"
+    echo -e ""$YS" 7"$CE") Social tools"
+    echo -e ""$YS" 20"$CE") Others"
+	echo -e ""$YS" 21"$CE") Install/reinstall a tool"
 	echo -e ""$YS" i"$CE") Info"
 	echo -e ""$YS" b"$CE") Go back"
 	#~ echo -e ""$YS"00"$CE") Main menu"
@@ -6591,20 +6674,23 @@ function tools_menu
 		elif [[ "$CATEG" = "4" ]]
 		then
 			website_tools
-		elif [[ "$CATEG" = "5" ]]
+        elif [[ "$CATEG" = "5" ]]
+		then
+			toolkits
+		elif [[ "$CATEG" = "6" ]]
+		then
+			helpful_exploits
+		elif [[ "$CATEG" = "7" ]]
+		then
+			social_tools
+		elif [[ "$CATEG" = "20" ]]
 		then
 			other_tools
-		elif [[ "$CATEG" = "6" ]]
+		elif [[ "$CATEG" = "21" ]]
 		then
 			NOCONFIRM=0
 			reinstall_tools
 			NOCONFIRM=0
-        elif [[ "$CATEG" = "7" ]]
-		then
-			toolkits
-		elif [[ "$CATEG" = "8" ]]
-		then
-			helpful_exploits
 		elif [[ "$CATEG" = "0" ]]
 		then
 			clear
@@ -9918,6 +10004,19 @@ check_if_ks
             sudo python coffeeMiner.py
 		fi
 	}
+	function install_instaininsane
+	{
+		foldname="instainsane"
+		gitlink="https://github.com/thelinuxchoice/instainsane"
+		install_default
+		cloned=$?
+		if [[ "$cloned" == 1 ]]
+		then
+			chmod +x install.sh
+			sudo bash install.sh
+            sudo bash instainsane.sh
+		fi
+	}
     function install_hacktronian
 	{
 		foldname="hacktronian"
@@ -9929,6 +10028,18 @@ check_if_ks
 			chmod +x install.sh
 			sudo bash install.sh
             sudo python hacktronian.py
+		fi
+	}
+    function install_thechoice
+	{
+		foldname="thechoice"
+		gitlink="https://github.com/thelinuxchoice/thechoice"
+		install_default
+		cloned=$?
+		if [[ "$cloned" == 1 ]]
+		then
+			chmod +x thechoice
+			sudo bash thechoice
 		fi
 	}
     function install_pwnedornot
