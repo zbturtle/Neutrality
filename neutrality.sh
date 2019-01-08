@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # set -x
-VERSION=2.1.5
+VERSION=2.1.6
 #Number of tools with keyboard shortcut support
 HOWMANYTOOLS=57
 BACKL="0"
@@ -87,7 +87,7 @@ toolarray=(
 "websploit" "openvas" "shellter" "geany" "bleachbit" "vmr" "hashbuster" "findsploit" "howdoi" "operative" "netattack2" "koadic" "empire" "meterpreter_paranoid_mode"
 "dropit_frmw" "wifi_pumpkin" "veil" "leviathan" "fake_image" "avet" "gloom" "arcanus" "msfpc" "morphhta" "lfi" "unibyav" "demiguise" "dkmc" "sechub" "beef" "mitmf"
 "fsociety" "arp_scan" "netool" "sqlmap" "patator" "zeus" "evil_droid" "nosqlmap" "eggshell" "zerodoor" "cromos" "yuki-chan" "socialfish" "wifi-hacker" "autosploit" "blazy"
-"striker" "hyprpulse" "instaburst" "instagram-py" "datasploit" "sitebroker" "enigma" "ha3mrx" "hacktronian" "coffeeminer" "pwnedornot" "thechoice" "instaininsane"
+"striker" "hyprpulse" "instaburst" "instagram-py" "datasploit" "sitebroker" "enigma" "ha3mrx" "hacktronian" "coffeeminer" "pwnedornot" "thechoice" "instaininsane" "instagen"
 )
 #setting frequent stings
 	YNYES="("$YS"y"$CE"/"$YS"n"$CE")("$YS"Enter"$CE"=yes)"
@@ -893,6 +893,11 @@ function listshortcuts
 		TITLE="Instain Insane"
 		NAMECD="cd /root/instainsaine"
 		KSSET="bash instainsaine.sh"
+	elif [[ "$nn" = "61" ]]
+	then
+		TITLE="Instagen"
+		NAMECD="cd /root/instagen"
+		KSSET="bash instagen.sh"
 	fi
 }
 function reinstall_tools
@@ -4122,6 +4127,12 @@ do
 	else
 		echo -e ""$RS"1"$CE") "$RS"Instain Insane"$CE"            Used for multi-thread Instagram bruteforcing"
   fi
+  if [[ -d /root/instagen ]]
+	then
+		echo -e ""$YS"1"$CE") Instagen                  Used for generation of Instagram accounts"
+	else
+		echo -e ""$RS"1"$CE") "$RS"Instagen"$CE"                  Used for generation of Instagram accounts"
+  fi
 	echo -e ""$YS" b"$CE") Go back"
 	echo -e ""$YS" 0"$CE") EXIT"
 	echo -e "Choose: "
@@ -4139,6 +4150,23 @@ do
 				if [[ "$INSTALL" = "install" ]]
 				then
 					install_instaininsane
+				else
+					continue
+				fi
+		fi
+	elif [[ "$SOCIALTOOLS" = 2 ]]
+	then
+		if [[ -f /root/instagen ]]
+		then
+     cd /root/instagen
+		 bash instagen.sh
+     cd
+		else
+			echo -e "$TNI"
+				read INSTALL
+				if [[ "$INSTALL" = "install" ]]
+				then
+					install_instagen
 				else
 					continue
 				fi
@@ -6332,7 +6360,7 @@ function metasploit_menu
 		clear
 		echo -e "CAUTION: DO NOT upload it to anti-virus scanners online."
 		sleep 3
-		echo -e "You agree with that?("$YS"YES"$CE"/"$YS"*"$CE")"
+		echo -e "Do you agree with this?("$YS"YES"$CE"/"$YS"*"$CE")"
 		read MUSTBEYES
 		if [[ "$MUSTBEYES" = "YES" ]] 
 		then 
@@ -6462,7 +6490,7 @@ function update_neutrality
 	then
 		VER=$(timeout -s SIGTERM 20 curl 
     #Update Github
-    "https://raw.githubusercontent.com/arismelachroinos/lscript/master/version.txt" 2>/dev/null)
+    "https://raw.githubusercontent.com/zbturtle/Neutrality/master/versions.txt" 2>/dev/null)
 		if [[ "$VERSION" != "$VER" ]]
 		then
 			clear
@@ -6493,7 +6521,7 @@ function update_neutrality
 				cd
 				git clone 
         #Update Github
-        https://github.com/arismelachroinos/lscript.git
+        https://github.com/zbturtle/Neutrality.git
 				cd "$LPATH"
 				chmod +x install.sh
 				clear
@@ -6646,17 +6674,17 @@ function tools_menu
 	TERMINALTITLE="TOOLS"
 	dash_calc
 	printf '\033]2;TOOLS\a'
-	echo -e ""$YS" 1"$CE") Wifi tools"
-	echo -e ""$YS" 2"$CE") Remote access"
-	echo -e ""$YS" 3"$CE") Information gathering"
-	echo -e ""$YS" 4"$CE") Webside tools"
-    echo -e ""$YS" 5"$CE") Toolkits"
-    echo -e ""$YS" 6"$CE") Helpful exploits"
-    echo -e ""$YS" 7"$CE") Social tools"
+	echo -e ""$YS" 1"$CE")  Wifi tools"
+	echo -e ""$YS" 2"$CE")  Remote access"
+	echo -e ""$YS" 3"$CE")  Information gathering"
+	echo -e ""$YS" 4"$CE")  Webside tools"
+    echo -e ""$YS" 5"$CE")  Toolkits"
+    echo -e ""$YS" 6"$CE")  Helpful exploits"
+    echo -e ""$YS" 7"$CE")  Social tools"
     echo -e ""$YS" 20"$CE") Others"
 	echo -e ""$YS" 21"$CE") Install/reinstall a tool"
-	echo -e ""$YS" i"$CE") Info"
-	echo -e ""$YS" b"$CE") Go back"
+	echo -e ""$YS" i"$CE")  Info"
+	echo -e ""$YS" b"$CE")  Go back"
 	#~ echo -e ""$YS"00"$CE") Main menu"
 	echo -e ""$YS" 0"$CE") EXIT"
 	echo "Choose: "
@@ -6711,6 +6739,12 @@ function tools_menu
 			echo -e "	and bypassing anti-virus software."
 			echo -e "Information gathering:"
 			echo -e "	Self-explained."
+			echo -e "Webside tools:"
+			echo -e "	Used for web-based attacks."
+			echo -e "Toolkits:"
+			echo -e "	Groups of hacking tools with large possibilities."
+			echo -e "Helpful exploits:"
+			echo -e "	Used for things such as cryptocurrency mining on a network."
 			echo -e "Other tools:"
 			echo -e "	Some very usefull tools that don't fit to the other categories."
 			echo -e "Install/reinstall a tool:"
@@ -6768,6 +6802,7 @@ function terms_of_use
 	$READAK
 	clear
 	echo -e "This tool is only for educational purposes only."
+	echo -e "I will not use this tool on governments or militaries."
 	echo -e "Use this tool only on your own network and never without permission."
 	echo -e "I am not responsible for anything you do with this tool."
 	echo -e "Will you use this tool only on your own network or networks you are permitted to test on responsibly?("$YS"YES"$CE"/"$YS"NO"$CE"): "
@@ -10017,6 +10052,18 @@ check_if_ks
             sudo bash instainsane.sh
 		fi
 	}
+	function install_instagen
+	{
+		foldname="instagen"
+		gitlink="https://github.com/thelinuxchoice/instagen"
+		install_default
+		cloned=$?
+		if [[ "$cloned" == 1 ]]
+		then
+			chmod +x instagen.sh
+            sudo bash instagen.sh
+		fi
+	}
     function install_hacktronian
 	{
 		foldname="hacktronian"
@@ -11089,7 +11136,7 @@ check_if_ks
 #------------------------------------
 ####################################
 defaults_neutrality
-printf '\033]2;The Neutrality script\a'
+printf '\033]2;The Neutrality Script\a'
 if [[ "$ONETIMEPERLAUNCH" != "1" ]]
 then
 	one_time_per_launch_ks
